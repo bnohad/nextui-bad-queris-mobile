@@ -10,7 +10,8 @@ export default function Home() {
   const [changed, setChanged] = useState<Record<string, string>>({});
 
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 rounded-xl border-warning border-1 border-dashed">
+      <h4 className='text-danger'>&lt;app/page.tsx&gt;</h4>
       <div className="inline-block max-w-lg text-center justify-center">
         <h1 className={title()}>Bad&nbsp;</h1>
         <h1 className={title({ color: "violet" })}>Query&nbsp;</h1>
@@ -20,10 +21,12 @@ export default function Home() {
         </h1>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-3 p-5 rounded-xl border-warning border-1 border-dashed">
+        <h4 className='text-danger'>&lt;Suspense&gt;</h4>
           <Suspense>
             <ParamsHandler onChange={setChanged}/>
           </Suspense>
+        <h4 className='text-danger'>&lt;/Suspense&gt;</h4>
       </div>
 
         <div className='p-5'>
@@ -42,6 +45,7 @@ export default function Home() {
           </span>
         </Snippet>
       </div>
+      <h4 className='text-danger'>&lt;/ app/page.tsx&gt;</h4>
     </section>
   );
 }
